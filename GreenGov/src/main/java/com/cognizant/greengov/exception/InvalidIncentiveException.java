@@ -1,4 +1,4 @@
-package com.example.greengov.exception;
+package com.cognizant.greengov.exception;
 
 public class InvalidIncentiveException extends RuntimeException {
     public InvalidIncentiveException(String message) {

@@ -1,11 +1,11 @@
-package com.example.greengov.repository;
+package com.cognizant.greengov.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.greengov.model.Incentive;
+import com.cognizant.greengov.model.Incentive;
 
 @Repository
 public interface IncentiveRepository extends JpaRepository<Incentive, Long> {

@@ -1,4 +1,4 @@
-package com.example.greengov.exception;
+package com.cognizant.greengov.exception;
 
 // Fixed: Added 'extends RuntimeException' and the constructor
 public class ResourceNotFoundException extends RuntimeException {

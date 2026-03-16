@@ -1,4 +1,4 @@
-package com.example.greengov.service;
+package com.cognizant.greengov.service;
 
 
 
@@ -10,10 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.greengov.dto.IncentiveRequest;
-import com.example.greengov.dto.IncentiveResponse;
-import com.example.greengov.model.Incentive;
-import com.example.greengov.repository.IncentiveRepository;
+import com.cognizant.greengov.dto.IncentiveRequest;
+import com.cognizant.greengov.dto.IncentiveResponse;
+import com.cognizant.greengov.model.Incentive;
+import com.cognizant.greengov.repository.IncentiveRepository;
 
 @Service
 public class IncentiveServiceImpl implements IncentiveService {

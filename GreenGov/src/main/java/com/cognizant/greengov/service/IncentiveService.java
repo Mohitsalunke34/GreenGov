@@ -1,9 +1,9 @@
-package com.example.greengov.service;
+package com.cognizant.greengov.service;
 
 import java.util.List;
 
-import com.example.greengov.dto.IncentiveRequest;
-import com.example.greengov.dto.IncentiveResponse;
+import com.cognizant.greengov.dto.IncentiveRequest;
+import com.cognizant.greengov.dto.IncentiveResponse;
 
 public interface IncentiveService {
     IncentiveResponse createIncentive(IncentiveRequest request);

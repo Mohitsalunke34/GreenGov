@@ -1,4 +1,4 @@
-package com.example.greengov.controller;
+package com.cognizant.greengov.controller;
 
 
 import java.util.List;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.greengov.dto.IncentiveRequest;
-import com.example.greengov.dto.IncentiveResponse;
-import com.example.greengov.service.IncentiveService;
+import com.cognizant.greengov.dto.IncentiveRequest;
+import com.cognizant.greengov.dto.IncentiveResponse;
+import com.cognizant.greengov.service.IncentiveService;
 
 @RestController
 @RequestMapping("/api/incentives")

@@ -1,4 +1,4 @@
-package com.example.greengov.model;
+package com.cognizant.greengov.model;
 
 import java.time.LocalDate;
 

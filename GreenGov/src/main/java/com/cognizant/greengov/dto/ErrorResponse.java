@@ -1,4 +1,4 @@
-package com.example.greengov.dto;
+package com.cognizant.greengov.dto;
 
 import java.time.LocalDateTime;
 
