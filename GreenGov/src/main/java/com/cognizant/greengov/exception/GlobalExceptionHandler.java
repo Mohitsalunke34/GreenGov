@@ -1,5 +1,6 @@
 package com.cognizant.greengov.exception;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.http.HttpStatus;
@@ -35,6 +36,16 @@ public class GlobalExceptionHandler {
                 request.getDescription(false)
         );
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+    
+    @ExceptionHandler(ProjectNotFound.class)
+    public ResponseEntity<ExceptionResponse> handleNotFound(ProjectNotFound ex) {
+        return new ResponseEntity<>(new ExceptionResponse(ex.getMessage(), LocalDate.now(), 404), HttpStatus.NOT_FOUND);
+    }
+    
+    @ExceptionHandler(DuplicateProjectException.class)
+    public ResponseEntity<ExceptionResponse> handleDuplicate(DuplicateProjectException ex) {
+        return new ResponseEntity<>(new ExceptionResponse(ex.getMessage(), LocalDate.now(), 409), HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler(Exception.class)
