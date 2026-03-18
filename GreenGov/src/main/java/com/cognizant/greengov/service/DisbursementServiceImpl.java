@@ -29,16 +29,16 @@ public class DisbursementServiceImpl implements DisbursementService {
     @Override
     @Transactional
     public DisbursementResponse processDisbursement(DisbursementRequest request) {
-        // 1. Validate Incentive existence
+     
         Incentive incentive = incentiveRepository.findById(request.getIncentiveId())
                 .orElseThrow(() -> new ResourceNotFoundException("Incentive not found for ID: " + request.getIncentiveId()));
 
-        // 2. Business Logic: Must be APPROVED to pay
+        
         if (!"APPROVED".equalsIgnoreCase(incentive.getStatus())) {
             throw new InvalidIncentiveException("Disbursement failed. Incentive must be 'APPROVED'. Current status: " + incentive.getStatus());
         }
 
-        // 3. Create Disbursement
+     
         Disbursement disbursement = new Disbursement();
         disbursement.setIncentiveId(request.getIncentiveId());
         disbursement.setOfficerId(request.getOfficerId());
@@ -47,7 +47,7 @@ public class DisbursementServiceImpl implements DisbursementService {
 
         Disbursement savedDisbursement = disbursementRepository.save(disbursement);
 
-        // 4. Update the parent Incentive to DISBURSED
+       
         incentive.setStatus("DISBURSED");
         incentiveRepository.save(incentive);
 

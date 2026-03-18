@@ -2,7 +2,6 @@ package com.cognizant.greengov.controller;
 
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,23 +25,29 @@ public class IncentiveController {
     @Autowired
     private IncentiveService incentiveService;
 
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<IncentiveResponse> createIncentive(@RequestBody IncentiveRequest request) {
         return ResponseEntity.ok(incentiveService.createIncentive(request));
     }
     
-    @GetMapping("/{id}")
+    @GetMapping("/fetchById/{id}")
     public ResponseEntity<IncentiveResponse> getIncentive(@PathVariable Long id) {
         return ResponseEntity.ok(incentiveService.getIncentiveById(id));
     }
 
-    @GetMapping
+    @GetMapping("/fetchAll")
     public ResponseEntity<List<IncentiveResponse>> listAll() {
         return ResponseEntity.ok(incentiveService.getAllIncentives());
     }
     
-    @PatchMapping("/{id}/status")
+    @PatchMapping("/updateStatus/{id}/status")
     public ResponseEntity<IncentiveResponse> updateStatus(@PathVariable Long id, @RequestParam String status) {
         return ResponseEntity.ok(incentiveService.updateStatus(id, status));
     }
+    
+//    @DeleteMapping("/delete/{id}")
+//    public ResponseEntity<IncentiveResponse> deleteIncentive(@RequestParam("id")){
+//    	
+//    }
+    
 }

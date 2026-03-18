@@ -1,8 +1,13 @@
 package com.cognizant.greengov.model;
 
-import jakarta.persistence.*;
-import lombok.Data;
 import java.time.LocalDate;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name = "disbursements")
@@ -12,8 +17,14 @@ public class Disbursement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long disbursementId;
 
+//    @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "incentive_id") 
+//    private Incentive incentive; 
     private Long incentiveId;
-    private Long officerId; // The Environmental Officer authorizing the payment
+    
+//    @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "officer_id") 
+//    private User officer; 
+    
+    private Long officerId;
     private LocalDate paymentDate;
-    private String status; // e.g., COMPLETED, FAILED
+    private String status;
 }

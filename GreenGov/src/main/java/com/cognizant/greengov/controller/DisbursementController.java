@@ -23,21 +23,21 @@ public class DisbursementController {
     @Autowired
     private DisbursementService disbursementService;
 
-    // Execute Payment
-    @PostMapping
+
+    @PostMapping("create")
     public ResponseEntity<DisbursementResponse> createDisbursement(@RequestBody DisbursementRequest request) {
         DisbursementResponse response = disbursementService.processDisbursement(request);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    // Get specific payout details for Audit
-    @GetMapping("/{id}")
+    
+    @GetMapping("fetchById/{id}")
     public ResponseEntity<DisbursementResponse> getDisbursement(@PathVariable Long id) {
         return ResponseEntity.ok(disbursementService.getDisbursementById(id));
     }
 
-    // List all payout history
-    @GetMapping
+   
+    @GetMapping("fetchAll")
     public ResponseEntity<List<DisbursementResponse>> listAllDisbursements() {
         return ResponseEntity.ok(disbursementService.getAllDisbursements());
     }

@@ -1,8 +1,5 @@
 package com.cognizant.greengov.dto;
 
-
-
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
@@ -15,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class IncentiveResponse {
-    private String message; // To provide feedback in Postman
+    private String message; 
     private Long incentiveId;
     private Long programId;
     private Long entityId;
